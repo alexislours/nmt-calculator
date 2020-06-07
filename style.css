@@ -1,0 +1,126 @@
+body {
+    font-family:  sans-serif;
+}
+
+.params {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 16px auto;
+    background: #FFFAE5;
+    color: #686868;
+    border-radius: 40px;
+    padding: 16px 0px;
+    padding-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-items: center;
+}
+
+.result {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 16px auto;
+    background: #85cfdc;
+    color: #686868;
+    border-radius: 40px;
+    padding: 16px 0px;
+    padding-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-items: center;
+}
+
+.formula {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 16px auto;
+    background: #9fe2b6;
+    color: #686868;
+    border-radius: 40px;
+    padding: 16px 0px;
+    padding-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-items: center;
+}
+
+.selector {
+    max-width: 200px;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 25px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.title-bubble {
+    background: #FFFFFF;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08);
+    border-radius: 30px;
+    padding-left: 10%;
+    align-items: center;
+    padding-right: 10%;
+}
+.formula-bubble {
+    background: #FFFFFF;
+    display: flex;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08);
+    border-radius: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.footer {
+    
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 16px auto;
+    background: #FFFAE5;
+    color: #686868;
+    border-radius: 40px;
+    padding: 16px 0px;
+    padding-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-items: center;
+}
+
+.github-logo {
+    height: 30px;
+    width: 30px;
+}
+
+.footer-align {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

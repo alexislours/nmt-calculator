@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Villager Calculator</title>
+    <meta name="description" content="Calculate the odds of finding a villager on Mystery Tour.">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="calculateVillagersOdds()">
+    <div class="params">
+        <div class="title-bubble">
+            <h1>Villager Calculator</h1>
+        </div>
+        <p>Species of the villager you are looking for:</p>
+        <select class="selector" id="species-select" onchange="calculateVillagersOdds()"></select>
+        <p>Number of villagers of that species you already have on your island:</p>
+        <select class="selector" id="villager-number" onchange="calculateVillagersOdds()">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <p>Number of Nook Miles Tickets you want to use:</p>
+        <input id="nmt-number" class="selector" type="number" min="2" value="10" style="width: 80px;"
+            onkeyup="calculateVillagersOdds()" onchange="calculateVillagersOdds()">
+        <br>
+        <div>
+            <input type="checkbox" id="has-1-species" name="has-1-species" onchange="calculateVillagersOdds()">
+            <label for="has-1-species">Do you have a complete species?</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="has-2-species" name="has-2-species" onchange="calculateVillagersOdds()">
+            <label for="has-2-species">Do you have two complete species?</label>
+        </div>
+    </div>
+
+    <div class="result">
+        <p id="result"></p>
+    </div>
+
+    <div class="formula">
+        <div class="formula-bubble">
+            <p>Formula:</p>
+        </div>
+        <br>
+        <span>1/Number of species * 1/(Number of villager in the species - Number of villagers of that species
+            owned)</span>
+        <span id="formula-span"></span>
+
+        <div>
+            <br>
+            <span>Decimal places:</span>
+            <input id="decimal-places" class="selector" type="number" min="1" value="2" style="width: 80px;"
+                onkeyup="calculateVillagersOdds()" onchange="calculateVillagersOdds()">
+            <br></div>
+    </div>
+    <div class="footer">
+        <div class="footer-align">
+            <span>Made by <b>Alexis#8717</b></span>
+            <a target="_blank" href="https://github.com/alexislours/nmt-calculator">
+                <div><img class="github-logo" src="./github-logo.svg">
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+
+</html>
