@@ -39,7 +39,7 @@ function calculateVillagersOdds() {
     var percent = (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100).toFixed(decimalPlaces);
 
     //Calculate the odds of finding a specific villager based on the number of tickets.
-    var bernoulli = (100 - Math.pow((100 - percent) / 100, nmtNumber) * 100).toFixed(decimalPlaces);
+    var bernoulli = (100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, nmtNumber) * 100).toFixed(decimalPlaces);
 
     //Don't blame me if you don't get Raymond in 40000 islands.
     if (bernoulli == 100) {
