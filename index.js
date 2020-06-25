@@ -106,8 +106,13 @@ function updateChart(nmtNumber, numberOfSpecies, numberOwned, decimalPlaces,  nu
             probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
             labelArray.push("" + index);
          }
-    } else {
+    } else if (nmtNumber < 50000){
         for (let index = 0; index <= nmtNumber; index+=100) {
+            probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
+            labelArray.push("" + index);
+         }
+    } else {
+        for (let index = 0; index <= nmtNumber; index+=1000) {
             probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
             labelArray.push("" + index);
          }
