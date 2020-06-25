@@ -96,14 +96,11 @@ function calculateVillagersOdds() {
 function updateChart(nmtNumber, numberOfSpecies, numberOwned, decimalPlaces,  numberOfVillager) {
     var probArray = [];
     var labelArray = [];
-    console.log(nmtNumber)
     for (let index = 0; index <= nmtNumber; index++) {
        probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
        labelArray.push("" + index);
         
     }
-    console.log(probArray)
-    console.log(labelArray)
     myChart.data.datasets[0].data = probArray;
     myChart.data.labels = labelArray;
     myChart.update();
