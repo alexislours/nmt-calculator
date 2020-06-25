@@ -96,10 +96,21 @@ function calculateVillagersOdds() {
 function updateChart(nmtNumber, numberOfSpecies, numberOwned, decimalPlaces,  numberOfVillager) {
     var probArray = [];
     var labelArray = [];
-    for (let index = 0; index <= nmtNumber; index++) {
-       probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
-       labelArray.push("" + index);
-        
+    if(nmtNumber < 1000) {
+        for (let index = 0; index <= nmtNumber; index++) {
+            probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
+            labelArray.push("" + index);
+         }
+    } else if (nmtNumber < 10000) {
+        for (let index = 0; index <= nmtNumber; index+=10) {
+            probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
+            labelArray.push("" + index);
+         }
+    } else {
+        for (let index = 0; index <= nmtNumber; index+=100) {
+            probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
+            labelArray.push("" + index);
+         }
     }
     myChart.data.datasets[0].data = probArray;
     myChart.data.labels = labelArray;
