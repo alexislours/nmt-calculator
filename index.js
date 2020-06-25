@@ -7,6 +7,32 @@ var speciesSelector = document.getElementById('species-select');
 var result = document.getElementById('result');
 var currentFormula = document.getElementById('formula-span');
 
+//Create Chart
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'Probabilities',
+            data: [],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+            pointRadius: 0,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: "Probabilities/number of tickets"
+        } 
+    }
+});
+
 //Creates the entries in the villager species select.
 for (var villagerKind in species) {
     var opt = document.createElement('option');
@@ -62,4 +88,23 @@ function calculateVillagersOdds() {
         result.innerHTML = "The number you entered is greater than the number of villagers within that species.";
         currentFormula.innerHTML = "";
     }
+
+    updateChart(nmtNumber, numberOfSpecies, numberOwned, decimalPlaces, numberOfVillager);
+    
+}
+
+function updateChart(nmtNumber, numberOfSpecies, numberOwned, decimalPlaces,  numberOfVillager) {
+    var probArray = [];
+    var labelArray = [];
+    console.log(nmtNumber)
+    for (let index = 0; index <= nmtNumber; index++) {
+       probArray.push((100 - Math.pow((100 - (1 / numberOfSpecies * 1 / (numberOfVillager - numberOwned) * 100)) / 100, index) * 100).toFixed(decimalPlaces))
+       labelArray.push("" + index);
+        
+    }
+    console.log(probArray)
+    console.log(labelArray)
+    myChart.data.datasets[0].data = probArray;
+    myChart.data.labels = labelArray;
+    myChart.update();
 }
